@@ -4,9 +4,6 @@ import Head from "next/head"
 import { useState, useEffect } from "react"
 import styles from "../styles/Home.module.css"
 
-// Dfinity
-//import { makeHelloActor } from "../ui/service/actor-locator"
-//const hello = makeHelloActor()
 import { icevent } from "../api/icevent";
 
 function HomePage() {
