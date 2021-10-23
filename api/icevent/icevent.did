@@ -1,0 +1,88 @@
+type Vansday = 
+ service {
+   addCalendar: (text, text, text, text, bool) -> ();
+   addComment: (text, nat, text, nat, nat) -> ();
+   addEvent: (nat, text, text, nat, nat, text, text, text, bool) -> ();
+   addTodo: (text, text, text, bool, nat) -> ();
+   addUser: (text) -> ();
+   completeTodo: (nat) -> ();
+   editTodo: (nat, text, text, bool, nat) -> ();
+   getCalEvents: (nat) -> (vec Event) query;
+   getCalendars: () -> (vec Calendar) query;
+   getComments: (nat, nat) -> (vec Comment) query;
+   getEvents: (nat, nat) -> (vec Event) query;
+   getMyCalendars: (text) -> (vec Calendar) query;
+   getMyEvents: (text, nat, nat) -> (vec Event) query;
+   getMyTodos: (text) -> (vec Todo) query;
+   getPosts: () -> (vec BBS) query;
+   getTodos: () -> (vec Todo) query;
+   idQuick: () -> (principal);
+   installer: () -> (principal) query;
+   listUsers: () -> (vec Profile) query;
+   lookupUser: (text) -> (opt Profile) query;
+   updateCalendar: (nat, text, text, text, text, bool, bool, nat) -> ();
+   updateEvent: (nat, nat, text, text, nat, nat, text, text, text, bool,
+    nat) -> ();
+   userCount: () -> (nat) query;
+   whoami: () -> (principal);
+ };
+type Todo = 
+ record {
+   calendar: nat;
+   description: text;
+   duedate: nat;
+   id: nat;
+   ispublic: bool;
+   owner: text;
+   parent: nat;
+   status: nat;
+   todo: text;
+ };
+type Profile = 
+ record {
+   name: text;
+   role: nat;
+   status: nat;
+   subcals: vec nat;
+   userid: text;
+ };
+type Event = 
+ record {
+   calendar: nat;
+   description: text;
+   end: nat;
+   id: nat;
+   ispublic: bool;
+   location: text;
+   owner: text;
+   start: nat;
+   status: nat;
+   title: text;
+   tz: text;
+ };
+type Comment = 
+ record {
+   attachid: nat;
+   attachtype: nat;
+   comment: text;
+   timestamp: nat;
+   user: text;
+ };
+type Calendar = 
+ record {
+   description: text;
+   id: nat;
+   ispublic: bool;
+   isverified: bool;
+   name: text;
+   owner: text;
+   status: nat;
+   url: text;
+ };
+type BBS = 
+ record {
+   post: text;
+   timestamp: nat;
+   userid: text;
+ };
+service : () -> Vansday
