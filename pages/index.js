@@ -4,19 +4,12 @@ import Head from "next/head"
 import { useState, useEffect } from "react"
 import styles from "../styles/Home.module.css"
 
-import { icevent } from "../api/icevent";
+import { Calendars } from "../components/calendars/CalendarList";
 
 function HomePage() {
     const [calendars, setCalendars] = useState([])
 
-    async function getUserCount() {
 
-        const calendars = await icevent.getCalendars()
-        setCalendars(calendars)
-    }
-    const calist = calendars && calendars.map(c=>
-        <li>{c.name}</li>
-        );
     return (
         <div className={styles.container}>
             <Head>
@@ -32,9 +25,7 @@ function HomePage() {
                     alt="ICEvent logo"
                     className={styles.logo}
                 />
-                <ul>
-               {calist}
-               </ul>
+               <Calendars />
             </main>
         </div>
     )
