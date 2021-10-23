@@ -35,7 +35,7 @@ export const canisterId = "ukvuy-5aaaa-aaaaj-qabva-cai";//process.env.ICEVENT_CA
  * A ready-to-use agent for the hello canister
  * @type {import("@dfinity/agent").ActorSubclass<import("./hello.did.js")._SERVICE>}
  */
- export const hello = createActor(canisterId,{
+ export const icevent = createActor(canisterId,{
   agentOptions: {
     host: "https://ic0.app",//process.env.NEXT_PUBLIC_IC_HOST,
   },
