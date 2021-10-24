@@ -6,12 +6,12 @@ import { Container,Divider,Dimmer,Loader,
      Label,Card, Button, Modal,Header,Form,TextArea,Checkbox,Icon
 } from 'semantic-ui-react'
 
-import { icevent } from "../../api/icevent";
-import { CalendarCard } from './CalendarCard';
+import { icevent } from "../api/icevent";
+import  CalendarCard  from '../components/calendars/CalendarCard';
 
-import { CalendarForm } from './CalendarForm';
+import  CalendarForm  from '../components/calendars/CalendarForm';
 
-function Calendars(props){
+export default function CalendarList(props){
 
     const [loading, setLoading] = useState(false)
     const [activeLabel, setActiveLabel] = useState("public")
@@ -118,4 +118,3 @@ function Calendars(props){
     )
 }
 
-export {Calendars}

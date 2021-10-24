@@ -4,8 +4,8 @@ import { render } from "react-dom";
 
 import { Checkbox, Form, Button, Segment,Item,Image, Modal,Header,Icon,Comment,TextArea,Loader,Dimmer} from 'semantic-ui-react'
 import moment from 'moment';
-import { icevent } from "../../../declarations/icevent";
-import { TodoView } from "./TodoView";
+import { icevent } from "../../api/icevent";
+import  TodoView  from "./TodoView";
 import CommentListItem from '../comment/CommentListItem';
 import Comments from '../comment/Comments';
 
@@ -123,7 +123,7 @@ function TodoItem(props){
                         </Item.Description>
                         <Item.Extra>
                         { !checked && props.principal == theTodo.owner  && <Button onClick={()=>setOpenTodo(true)} icon floated="right"><Icon name="pencil"/></Button>}
-                        { !checked && props.principal == theTodo.owner  && <Button onClick={} icon floated="right"><Icon name="tasks"/></Button>}
+                        { !checked && props.principal == theTodo.owner  && <Button  icon floated="right"><Icon name="tasks"/></Button>}
                         { <Button onClick={()=>setOpenComment(true)} icon floated="right"><Icon name="comments"/></Button>}
                         </Item.Extra>
                     </Item.Content>

@@ -4,10 +4,10 @@ import { render } from "react-dom";
 
 import { Checkbox, Form, Button, Segment,Label, Modal,Header,Icon,Item,TextArea,Loader,Dimmer} from 'semantic-ui-react'
 import moment from 'moment';
-import { icevent } from "../../../declarations/icevent";
+import { icevent } from "../../api/icevent";
 
 
-function TodoView(props){
+const TodoView = (props) => {
 
     const [loading, setLoading] = useState(false)
     const [theTodo, setThetodo] = useState(props.todo);
@@ -85,4 +85,4 @@ function TodoView(props){
     )
 }
 
-export {TodoView}
+export default TodoView

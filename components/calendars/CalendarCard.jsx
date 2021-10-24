@@ -6,11 +6,11 @@ import { Container,Divider, Search,Card, Button, Modal,Header,Form,TextArea,Load
 
 import { icevent } from "../../api/icevent";
 
-import { EventForm } from "../event/EventForm";
-import { CalendarForm } from "./CalendarForm";
-import { CalendarView } from "./CalendarView";
+import  EventForm  from "../event/EventForm";
+import  CalendarForm  from "./CalendarForm";
+import  CalendarView  from "./CalendarView";
 
-function CalendarCard(props){
+const CalendarCard = (props) => {
 
     const [loading, setLoading] = useState(false)
     const [isShowMOdal, setIsShowMOdal] = useState(false)
@@ -160,4 +160,4 @@ function CalendarCard(props){
     )
 }
 
-export {CalendarCard}
+export default CalendarCard

@@ -2,7 +2,7 @@
 import React, { useState,useEffect } from 'react';
 import { Container,Divider, Search,Card, Button, Modal,Header,Form,TextArea,Checkbox,Icon} from 'semantic-ui-react'
 
-function CalendarForm(props){
+const  CalendarForm = (props) => {
     const [name, setName] = useState(props.calendar ? props.calendar.name :'');
     const [description,setDescription] = useState(props.calendar ? props.calendar.description : '');  
     const [url, setUrl] = useState(props.calendar ? props.calendar.url : "")
@@ -59,4 +59,4 @@ function CalendarForm(props){
             </Form>
     )
 }
-export {CalendarForm};
+export default CalendarForm;
